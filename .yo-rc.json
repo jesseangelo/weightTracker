@@ -1,0 +1,42 @@
+{
+  "generator-jhipster": {
+    "applicationType": "monolith",
+    "gitCompany": "",
+    "baseName": "weightTracker",
+    "packageName": "com.hollowleg.weighttracker",
+    "packageFolder": "com/hollowleg/weighttracker",
+    "serverPort": 8080,
+    "serviceDiscoveryType": false,
+    "authenticationType": "jwt",
+    "uaaBaseName": "../uaa",
+    "cacheProvider": "no",
+    "enableHibernateCache": false,
+    "websocket": false,
+    "databaseType": "mongodb",
+    "devDatabaseType": "mongodb",
+    "prodDatabaseType": "mongodb",
+    "searchEngine": false,
+    "enableSwaggerCodegen": false,
+    "messageBroker": false,
+    "buildTool": "maven",
+    "useSass": true,
+    "clientPackageManager": "npm",
+    "testFrameworks": [],
+    "enableTranslation": false,
+    "nativeLanguage": "en",
+    "languages": [
+      "en"
+    ],
+    "clientFramework": "angularX",
+    "jhiPrefix": "jhi",
+    "jhipsterVersion": "6.1.2",
+    "jwtSecretKey": "NzFiYjg5NzA1ZGI4MTczZjVlYWMyZDUxZDUyOGIwODg3MjRlMzBkMmFlOWRhMmMxZWQyZWM2ODVmN2Q4MWMxNzBiNDMzYTQyYzM4YTlkM2QzZjg0NTMxY2Q4YzEyNzA3NmZmYjUzMmZiYWUxMTc0ODQ3NmI5ZDRhZWI4ZjM1MGE=",
+    "clientTheme": "none",
+    "entitySuffix": "",
+    "dtoSuffix": "DTO",
+    "otherModules": []
+  },
+  "git-provider": "GitHub",
+  "git-company": "jesseangelo",
+  "repository-name": "weightTracker"
+}
