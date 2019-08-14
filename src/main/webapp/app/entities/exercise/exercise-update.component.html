@@ -1,0 +1,57 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="editForm">
+            <h2 id="jhi-exercise-heading">Create or edit a Exercise</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!editForm.get('id').value">
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_name">Name</label>
+                    <input type="text" class="form-control" name="name" id="field_name"
+                           formControlName="name"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_type">Type</label>
+                    <select class="form-control" name="type" formControlName="type" id="field_type">
+                        <option value="BARBELL">BARBELL</option>
+                        <option value="DUMBBELL">DUMBBELL</option>
+                        <option value="MACHINE">MACHINE</option>
+                        <option value="BAND">BAND</option>
+                        <option value="KETTLEBELL">KETTLEBELL</option>
+                        <option value="BODYWEIGHT">BODYWEIGHT</option>
+                        <option value="TOY">TOY</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_bodyParts">Body Parts</label>
+                    <select class="form-control" name="bodyParts" formControlName="bodyParts" id="field_bodyParts">
+                        <option value="SHOULDERS">SHOULDERS</option>
+                        <option value="BICEPS">BICEPS</option>
+                        <option value="TRICEPS">TRICEPS</option>
+                        <option value="BACK">BACK</option>
+                        <option value="CHEST">CHEST</option>
+                        <option value="CORE">CORE</option>
+                        <option value="QUADS">QUADS</option>
+                        <option value="HAMSTRINGS">HAMSTRINGS</option>
+                        <option value="BUNS">BUNS</option>
+                        <option value="GRIP">GRIP</option>
+                        <option value="CALVES">CALVES</option>
+                    </select>
+                </div>
+
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>

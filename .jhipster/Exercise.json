@@ -1,0 +1,28 @@
+{
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "type",
+            "fieldType": "ExerciseType",
+            "fieldValues": "BARBELL,DUMBBELL,MACHINE,BAND,KETTLEBELL,BODYWEIGHT,TOY"
+        },
+        {
+            "fieldName": "bodyParts",
+            "fieldType": "ExerciseBodyParts",
+            "fieldValues": "SHOULDERS,BICEPS,TRICEPS,BACK,CHEST,CORE,QUADS,HAMSTRINGS,BUNS,GRIP,CALVES"
+        }
+    ],
+    "dto": "no",
+    "searchEngine": false,
+    "service": "no",
+    "entityTableName": "exercise",
+    "databaseType": "mongodb",
+    "jpaMetamodelFiltering": false,
+    "pagination": "no"
+}

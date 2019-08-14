@@ -1,0 +1,61 @@
+<div>
+    <h2 id="page-heading">
+        <span>Sets</span>
+        <button id="jh-create-entity" class="btn btn-primary float-right jh-create-entity create-set" [routerLink]="['/set/new']">
+            <fa-icon [icon]="'plus'"></fa-icon>
+            <span >
+            Create new Set
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <br/>
+    <div class="alert alert-warning" *ngIf="sets?.length === 0">
+        <span>No sets found</span>
+    </div>
+    <div class="table-responsive" *ngIf="sets?.length > 0">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+            <th><span>ID</span></th>
+            <th><span>Reps</span></th>
+            <th><span>Weight</span></th>
+            <th><span>Exercise</span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let set of sets ;trackBy: trackId">
+                <td><a [routerLink]="['/set', set.id, 'view' ]">{{set.id}}</a></td>
+                <td>{{set.reps}}</td>
+                <td>{{set.weight}}</td>
+                <td>{{set.exercise}}</td>
+                <td class="text-right">
+                    <div class="btn-group">
+                        <button type="submit"
+                                [routerLink]="['/set', set.id, 'view' ]"
+                                class="btn btn-info btn-sm">
+                            <fa-icon [icon]="'eye'"></fa-icon>
+                            <span class="d-none d-md-inline">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/set', set.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon [icon]="'pencil-alt'"></fa-icon>
+                            <span class="d-none d-md-inline">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', 'set', { outlets: { popup: set.id + '/delete'} }]"
+                                replaceUrl="true"
+                                queryParamsHandling="merge"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon [icon]="'times'"></fa-icon>
+                            <span class="d-none d-md-inline">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
