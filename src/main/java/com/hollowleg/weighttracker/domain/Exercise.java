@@ -4,6 +4,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.io.Serializable;
+import java.util.List;
 
 import com.hollowleg.weighttracker.domain.enumeration.ExerciseType;
 
@@ -27,7 +28,7 @@ public class Exercise implements Serializable {
     private ExerciseType type;
 
     @Field("body_parts")
-    private ExerciseBodyParts bodyParts;
+    private List<ExerciseBodyParts> bodyParts;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public String getId() {
@@ -64,16 +65,16 @@ public class Exercise implements Serializable {
         this.type = type;
     }
 
-    public ExerciseBodyParts getBodyParts() {
+    public List<ExerciseBodyParts> getBodyParts() {
         return bodyParts;
     }
 
-    public Exercise bodyParts(ExerciseBodyParts bodyParts) {
+    public Exercise bodyParts(List<ExerciseBodyParts> bodyParts) {
         this.bodyParts = bodyParts;
         return this;
     }
 
-    public void setBodyParts(ExerciseBodyParts bodyParts) {
+    public void setBodyParts(List<ExerciseBodyParts> bodyParts) {
         this.bodyParts = bodyParts;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove
