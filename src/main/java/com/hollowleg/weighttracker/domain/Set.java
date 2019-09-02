@@ -23,7 +23,7 @@ public class Set implements Serializable {
     private Integer weight;
 
     @Field("exercise")
-    private Integer exercise;
+    private Exercise exercise;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here, do not remove
     public String getId() {
@@ -60,16 +60,16 @@ public class Set implements Serializable {
         this.weight = weight;
     }
 
-    public Integer getExercise() {
+    public Exercise getExercise() {
         return exercise;
     }
 
-    public Set exercise(Integer exercise) {
+    public Set exercise(Exercise exercise) {
         this.exercise = exercise;
         return this;
     }
 
-    public void setExercise(Integer exercise) {
+    public void setExercise(Exercise exercise) {
         this.exercise = exercise;
     }
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here, do not remove

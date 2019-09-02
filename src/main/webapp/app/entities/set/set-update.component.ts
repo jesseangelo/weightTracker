@@ -5,6 +5,8 @@ import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
 import { ISet, Set } from 'app/shared/model/set.model';
 import { SetService } from './set.service';
+import { ExerciseService } from '../exercise/exercise.service';
+import { filter, map } from 'rxjs/operators';
 
 @Component({
   selector: 'jhi-set-update',
@@ -20,10 +22,29 @@ export class SetUpdateComponent implements OnInit {
     exercise: []
   });
 
-  constructor(protected setService: SetService, protected activatedRoute: ActivatedRoute, private fb: FormBuilder) {}
+  exercises: any;
+
+  constructor(
+    protected setService: SetService,
+    protected activatedRoute: ActivatedRoute,
+    private fb: FormBuilder,
+    private exerciseService: ExerciseService
+  ) {}
 
   ngOnInit() {
     this.isSaving = false;
+    this.exerciseService
+      .query()
+      .pipe(
+        filter((res: HttpResponse<ISet[]>) => res.ok),
+        map((res: HttpResponse<ISet[]>) => res.body)
+      )
+      .subscribe(
+        (res: ISet[]) => {
+          this.exercises = res;
+        },
+        (res: HttpErrorResponse) => this.onError(res.message)
+      );
     this.activatedRoute.data.subscribe(({ set }) => {
       this.updateForm(set);
     });
