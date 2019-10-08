@@ -13,6 +13,10 @@ const LAYOUT_ROUTES = [navbarRoute, ...errorRoute];
           path: 'admin',
           loadChildren: './admin/admin.module#WeightTrackerAdminModule'
         },
+        {
+          path: 'track',
+          loadChildren: './track-ui/track.module#TrackModule'
+        },
         ...LAYOUT_ROUTES
       ],
       { enableTracing: DEBUG_INFO_ENABLED }

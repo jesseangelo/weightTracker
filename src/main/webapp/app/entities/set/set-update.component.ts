@@ -42,8 +42,8 @@ export class SetUpdateComponent implements OnInit {
       .subscribe(
         (res: ISet[]) => {
           this.exercises = res;
-        },
-        (res: HttpErrorResponse) => this.onError(res.message)
+        }
+        // (res: HttpErrorResponse) => this.onError(res.message)
       );
     this.activatedRoute.data.subscribe(({ set }) => {
       this.updateForm(set);
