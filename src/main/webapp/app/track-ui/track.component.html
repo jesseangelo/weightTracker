@@ -1,3 +1,90 @@
 <div>
-    HELLO FROM TRACKER!!!!
+    HELLO FROM TRACKER!!!!!
+    Start new workout, 
+    <!-- {{ lifters[0].name }} -->
+
+    add workout
+    <div class="col-8">
+        <form name="sessionForm" role="form" novalidate (ngSubmit)="save()" [formGroup]="sessionForm">
+            <h2 id="jhi-training-session-heading">Create or edit a Training Session</h2>
+            <div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_date">Date</label>
+                    <div class="d-flex">
+                        <input id="field_date" type="datetime-local" class="form-control" name="date" formControlName="date" placeholder="YYYY-MM-DD HH:mm"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_sets">Sets</label>
+                    <input type="number" class="form-control" name="sets" id="field_sets"
+                           formControlName="sets"/>
+                </div>
+
+            </div>
+            <!-- to save a set -->
+            <!-- <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button>
+            </div> -->
+        </form>
+    </div>
+
+    
+    <div *ngFor="let set of sets">{{set.reps}}</div>
+    <div class="col-8">
+        <form name="setEditForm" role="form" novalidate (ngSubmit)="createNewSet()" [formGroup]="setEditForm">
+            <h2 id="jhi-set-heading">Add set of exercise</h2>
+            <div>
+                <!-- <jhi-alert-error></jhi-alert-error> -->
+                <!-- <div class="form-group" [hidden]="!editForm.get('id').value"> -->
+                <!-- <div class="form-group"></div>
+                    <label for="id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id" formControlName="id"
+                        readonly />
+                </div> -->
+                <div class="form-group">
+                    <label class="form-control-label" for="field_reps">Reps</label>
+                    <input type="number" class="form-control" name="reps" id="field_reps"
+                           formControlName="reps"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_weight">Weight</label>
+                    <input type="number" class="form-control" name="weight" id="field_weight"
+                           formControlName="weight"/>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="field_exercise">Exercise</label>
+                    <select class="form-control" name="exercise" id="field_exercise" formControlName="exercise">
+                        <option *ngFor="let exercise of exercises">
+                           {{ exercise.name }}
+                        </option>
+                    </select>
+                </div>
+
+            </div>
+            <div>
+                <!-- <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span>Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Save</span>
+                </button> -->
+                 <button type="submit" id="save-entity" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Another set of</span>
+                </button>
+
+                 <button type="submit" id="save-entity" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span>Another exercise</span>
+                </button>
+
+            </div>
+        </form>
+    </div>
+
+
+    add reps and weight
 </div>
